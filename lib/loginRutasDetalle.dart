@@ -1,5 +1,8 @@
 import 'detallesproducto.dart';
 import 'productocondetalle.dart';
+import 'productosGrid.dart';
+import 'productosScroll.dart';
+import 'productosStack.dart';
 import 'package:flutter/material.dart';
 
 // Función principal
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => login(),
         '/productos': (context) => Productos(), // Ruta para la pantalla de productos
-        '/detallesproducto': (context) => DetalleProductoScreen() // Ruta para la pantalla de detalles del producto
+        '/detallesproducto': (context) => DetalleProductoScreen(), // Ruta para la pantalla de detalles del producto
+        '/productosGrid': (context) => ProductosGrid(), // Ruta para la pantalla de productos en Grid
+        '/productosScroll': (context) => ProductosScroll(), // Ruta para la pantalla de productos en Scroll
+        '/productosStack': (context) => ProductosStack(), // Ruta para la pantalla de productos en Stack
       },
     );
   }
@@ -112,10 +118,10 @@ class _login extends State<login> {
         ),
         onPressed: () {
           try {
-            // Navegamos a la pantalla de productos y pasamos el nombre de usuario
+            // Cambia la ruta aquí para probar diferentes pantallas
             Navigator.pushNamed(
               context,
-              '/productos',
+              '/productosGrid', // Cambia a '/productosScroll' o '/productosStack' para probar otras pantallas
               arguments: {'usuario': usuarioText},
             );
           } catch (e) {
